@@ -20,12 +20,12 @@ class App extends Component {
 
   handleClick = id => {
 
-    const chosenPokemon = this.state.characters.find(name => name.id === id);
-    console.log(chosenPokemon);
+    const chosenCharacter = this.state.characters.find(name => name.id === id);
+    console.log(chosenCharacter);
 
-    if (chosenPokemon.clicked === false) {
-      chosenPokemon.clicked = true;
-      console.log(chosenPokemon);
+    if (chosenCharacter.clicked === false) {
+      chosenCharacter.clicked = true;
+      console.log(chosenCharacter);
       const shuffledCharacters = this.state.characters.sort((a, b) => 0.5 - Math.random());
       this.setState({ character: shuffledCharacters })
       this.handleIncrement();
@@ -78,9 +78,9 @@ class App extends Component {
           yourGuess={this.state.yourGuess}
         />
         <Wrapper>
-          <Title>Click each character Pokemon once to earn points.
+          <Title>Click each character  once to earn points.
     <br></br>
-            Click the same Pokemon twice and it's game over.
+            Click the same character twice and it's game over.
     </Title>
           {this.state.characters.map(character => (
             <ImageCard
